@@ -21,7 +21,7 @@
 
 @font-face {
     font-family: 'Poppins';
-src: url(../fonts/Poppins-ExtraBold.ttf) format('truetype');
+    src: url(../fonts/Poppins-ExtraBold.ttf) format('truetype');
     font-weight: 800;
     font-style: normal;
 }
@@ -30,21 +30,21 @@ src: url(../fonts/Poppins-ExtraBold.ttf) format('truetype');
     --main-color: hsl(334, 30%, 27%);
     --color-error: #ff5757;
     --main-font: 'Poppins', sans-serif;
+    --bg-color: #f0f0f0;
+    --bg-img: none;
+    --main-color: #874efe;
+    --bg-card: #fff;
+    --bg-btn: #844efc;
+}
+
+.dark-theme {
+    --main-color: hsl(334, 30%, 27%);
     --bg-color: hsl(228, 50%, 6%);
     --bg-img: radial-gradient(circle at 10% 10%, hsl(198, 52%, 6%) 0%, transparent 60vw),
         radial-gradient(circle at 90% 15%, hsl(275, 80%, 15%) 0%, transparent 60vw),
         radial-gradient(circle at 50% 85%, hsl(334, 30%, 27%) 0%, transparent 60vw);
     --bg-card: rgba(255, 255, 255, 0.8);
     --bg-btn: hsl(334, 30%, 27%)
-}
-
-.light-theme {
-    --bg-color: #f0f0f0;
-    --bg-img: none;
-    --main-color: #874efe;
-    --bg-card: #fff;
-    --bg-btn: #844efc;
-
 }
 
 body {
@@ -74,9 +74,8 @@ body {
 .main_page__content {
     background-color: var(--bg-card);
     width: 100%;
-    max-width: 44rem;
-    padding: 3rem 3rem 0.5rem 3rem;
-    margin-top: 2.5rem;
+    max-width: 35rem;
+    padding: 2rem 2rem 0.5rem 2rem;
     box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.2);
     border-radius: 1.5rem 1.5rem 6.4rem 1.5rem;
     position: relative;
@@ -86,7 +85,7 @@ body {
     position: absolute;
     top: 2rem;
     right: 50%;
-    transform: translate(50%,-50%);
+    transform: translate(50%, -50%);
 
 }
 
@@ -108,44 +107,49 @@ body {
 
 .moon_color {
     mix-blend-mode: multiply;
-    fill: rgb(255, 255, 23);
+    fill: rgba(0, 0, 0, 0.5);
 }
 
 .sun_color {
     mix-blend-mode: multiply;
-    fill: rgba(0, 0, 0, 0.5);
+    fill: rgb(255, 255, 23);
 }
 
 .toggle_ball {
     position: absolute;
-    left: 0.9rem;
+    left: 1.1rem;
     top: 50%;
     width: 1.6rem;
     height: 1.6rem;
     transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
-transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
-.light-theme .toggle_container{
+
+.dark-theme .toggle_container {
     background-color: var(--bg-color);
 
 }
-.light-theme .toggle_ball{
-  transform: translate(3.5rem, -50%); 
-    background-color: rgba(255, 255, 255, 0.2) ;
+
+.dark-theme .toggle_ball {
+    transform: translate(3.2rem, -50%);
+    background-color: rgba(255, 255, 255, 0.2);
 }
-.light-theme .sun_color{
-     fill: rgb(255, 255, 23);
+
+.dark-theme .moon_color {
+    fill: rgb(255, 255, 23);
 }
-.light-theme .moon_color{
+
+.dark-theme .sun_color {
     fill: rgba(0, 0, 0, 0.5);
 }
+
 .age-calculator__inputs-container {
     display: flex;
     align-items: flex-start;
-    gap: 3rem;
+    gap: 2.3rem;
 
 }
 
@@ -156,8 +160,8 @@ transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .age-calculator__form-group input {
-    padding: 1.2rem;
-    width: 9rem;
+    padding: 1rem;
+    width: 7rem;
     border-radius: 0.4rem;
     outline: none;
     font-size: 1.5rem;
@@ -168,12 +172,14 @@ transition: transform 0.3s ease, background-color 0.3s ease;
 .age-calculator__form-group input:focus {
     outline: none;
     border-color: var(--main-color);
-    box-shadow: 0 0 10px 2px hsl(334, 30%, 27%);
+    box-shadow: 0 0 7px 2px var(--main-color);
 
 }
-.light-theme .age-calculator__form-group input:focus{
-      box-shadow: 0 0 10px 2px var(--main-color)
+
+.dark-theme .age-calculator__form-group input:focus {
+    box-shadow: 0 0 7px 2px var(--main-color)
 }
+
 .age-calculator__form-group input::placeholder {
     text-align: center;
     color: hsl(228, 12%, 48%);
@@ -187,10 +193,12 @@ transition: transform 0.3s ease, background-color 0.3s ease;
     margin-bottom: 0.5rem;
     text-align: center;
 }
-.form_btn{
+
+.form_btn {
     display: flex;
     align-items: center;
 }
+
 .age-calculator__btn {
     display: block;
     border-radius: 50%;
@@ -200,7 +208,8 @@ transition: transform 0.3s ease, background-color 0.3s ease;
     mix-blend-mode: multiply;
     position: relative;
 }
-.seperator{
+
+.seperator {
     flex-grow: 1;
     height: 0.1rem;
     margin-right: 1rem;
@@ -233,46 +242,89 @@ transition: transform 0.3s ease, background-color 0.3s ease;
     font-weight: 800;
     font-style: italic;
 }
-@media(width<=640px){
-.main_page__content{
-   max-width: 95%;
-   padding-inline: 1.5rem;
-   padding-block: 0.2rem
-}
-.age-calculator__inputs-container{
-    flex: 1;
-     gap: 1rem;
-     margin-top: 1rem;
-}
-.age-calculator__form-group{
-    flex: 1;
-}
-.age-calculator__form-group input{
-    width: 100%;
-   max-width:100%;
-   padding-block: 1.2rem;
-   padding-inline: 1.5rem;
 
-}
-.form_btn{
-    position:relative; 
-    margin-top:1rem;
+.age-calculator__error-message {
+    color: var(--color-error);
+    font-size: 0.9rem;
+    font-style: italic;
+    display: block;
 }
 
-.age-calculator__btn{
-    position:absolute;
-    right:50%;
-    top:50%;
-    z-index: 100;
-    transform: translate(50%, -50%);
+.age-calculator__form-group.invalid label {
+    color: var(--color-error);
 }
-.age-calculator__results{
-    margin-top:4rem
+
+.age-calculator__form-group.invalid input {
+    border-color: var(--color-error);
+    color: var(--color-error);
+
 }
-.seperator{
-    margin-right: 0;
+
+.age-calculator__form-group.invalid input:focus {
+    box-shadow: none
 }
-.toggle_container{
-    top:1.8rem
+
+.dark-theme .age-calculator__form-group.invalid input:focus {
+    box-shadow: none
 }
+
+@media(width<=640px) {
+    .main_page__content {
+        max-width: 90%;
+        padding: 1rem;
+        margin-top:0.5rem;
+    }
+
+    .age-calculator__inputs-container {
+        flex: 1;
+        gap: 1rem;
+    }
+
+    .age-calculator__form-group {
+        flex: 1;
+    }
+
+    .age-calculator__form-group input {
+        width: 100%;
+        max-width: 100%;
+        padding-block: 1.2rem;
+        padding-inline: 1.5rem;
+
+    }
+
+    .form_btn {
+        position: relative;
+        margin-top: 1rem;
+    }
+
+    .age-calculator__btn {
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        z-index: 100;
+        transform: translate(50%, -50%);
+    }
+
+    .age-calculator__results {
+        margin-top: 4rem
+    }
+
+    .seperator {
+        margin-right: 0;
+    }
+
+    .toggle_container {
+        top: 10%;
+
+    }
+
+    .age-calculator__error-message {
+        font-size: 0.6;
+    }
+    .age-calculator__result-item{
+        gap:2rem
+    }
+    .age-calculator__result-item p {
+        font-size: 2rem;
+    }
 }
