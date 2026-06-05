@@ -1,0 +1,277 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url(../fonts/Poppins-Regular.ttf)format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(../fonts/Poppins-Bold.ttf)format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(../fonts/Poppins-SemiBold.ttf)format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+src: url(../fonts/Poppins-ExtraBold.ttf) format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+:root {
+    --main-color: hsl(334, 30%, 27%);
+    --color-error: #ff5757;
+    --main-font: 'Poppins', sans-serif;
+    --bg-color: hsl(228, 50%, 6%);
+    --bg-img: radial-gradient(circle at 10% 10%, hsl(198, 52%, 6%) 0%, transparent 60vw),
+        radial-gradient(circle at 90% 15%, hsl(275, 80%, 15%) 0%, transparent 60vw),
+        radial-gradient(circle at 50% 85%, hsl(334, 30%, 27%) 0%, transparent 60vw);
+    --bg-card: rgba(255, 255, 255, 0.8);
+    --bg-btn: hsl(334, 30%, 27%)
+}
+
+.light-theme {
+    --bg-color: #f0f0f0;
+    --bg-img: none;
+    --main-color: #874efe;
+    --bg-card: #fff;
+    --bg-btn: #844efc;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--main-font);
+    background-color: var(--bg-color);
+    background-image: var(--bg-img);
+    background-attachment: fixed;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.main_page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    min-height: 100dvh;
+    position: relative;
+}
+
+.main_page__content {
+    background-color: var(--bg-card);
+    width: 100%;
+    max-width: 44rem;
+    padding: 3.5rem;
+    box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.2);
+    border-radius: 1.5rem 1.5rem 6.4rem 1.5rem;
+    position: relative;
+}
+
+.toggle_container {
+    position: absolute;
+    top: 2rem;
+    right: 50%;
+    transform: translate(50%,-50%);
+
+}
+
+.toggle_container button {
+    display: flex;
+    padding: 1rem;
+    gap: 1.5rem;
+    justify-content: space-between;
+    border-radius: 3rem;
+    background-color: var(--bg-card);
+    align-items: center;
+    width: 7rem;
+    height: 2.2rem;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.moon_color {
+    mix-blend-mode: multiply;
+    fill: rgb(255, 255, 23);
+}
+
+.sun_color {
+    mix-blend-mode: multiply;
+    fill: rgba(0, 0, 0, 0.5);
+}
+
+.toggle_ball {
+    position: absolute;
+    left: 0.9rem;
+    top: 50%;
+    width: 1.6rem;
+    height: 1.6rem;
+    transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.light-theme .toggle_container{
+    background-color: var(--bg-color);
+
+}
+.light-theme .toggle_ball{
+  transform: translate(3.5rem, -50%); 
+    background-color: rgba(255, 255, 255, 0.2) ;
+}
+.light-theme .sun_color{
+     fill: rgb(255, 255, 23);
+}
+.light-theme .moon_color{
+    fill: rgba(0, 0, 0, 0.5);
+}
+.age-calculator__inputs-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+
+}
+
+.age-calculator__form-group {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.age-calculator__form-group input {
+    padding: 1.2rem;
+    width: 9rem;
+    border-radius: 0.4rem;
+    outline: none;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+.age-calculator__form-group input:focus {
+    outline: none;
+    border-color: var(--main-color);
+    box-shadow: 0 0 10px 2px hsl(334, 30%, 27%);
+
+}
+.light-theme .age-calculator__form-group input:focus{
+      box-shadow: 0 0 10px 2px var(--main-color)
+}
+.age-calculator__form-group input::placeholder {
+    text-align: center;
+    color: hsl(228, 12%, 48%);
+    opacity: 0.5;
+}
+
+.age-calculator__form-group label {
+    font-family: var(--main-font);
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.form_btn{
+    display: flex;
+    align-items: center;
+}
+.age-calculator__btn {
+    display: block;
+    border-radius: 50%;
+    padding: 0.6rem;
+    background-color: black;
+    margin-top: 1.5rem;
+    mix-blend-mode: multiply;
+    position: relative;
+}
+.seperator{
+    flex-grow: 1;
+    height: 0.1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.age-calculator__btn:hover {
+    background-color: var(--bg-btn);
+}
+
+.age-calculator__result-item {
+    display: flex;
+    gap: 3rem;
+}
+
+.age-calculator__result-label {
+    margin-top: 0;
+}
+
+.age-calculator__result-item span {
+    font-size: 3rem;
+    color: var(--main-color);
+    font-weight: 800;
+
+}
+
+.age-calculator__result-item p {
+    font-size: 3rem;
+    font-weight: 800;
+    font-style: italic;
+}
+@media(width<=640px){
+.main_page__content{
+   max-width: 95%;
+   padding-inline: 1.5rem;
+   padding-block: 0.2rem
+}
+.age-calculator__inputs-container{
+    flex: 1;
+     gap: 1rem;
+     margin-top: 1rem;
+}
+.age-calculator__form-group{
+    flex: 1;
+}
+.age-calculator__form-group input{
+    width: 100%;
+   max-width:100%;
+   padding-block: 1.2rem;
+   padding-inline: 1.5rem;
+
+}
+.form_btn{
+    position:relative; 
+    margin-top:1rem;
+}
+
+.age-calculator__btn{
+    position:absolute;
+    right:50%;
+    top:50%;
+    z-index: 100;
+    transform: translate(50%, -50%);
+}
+.age-calculator__results{
+    margin-top:4rem
+}
+.seperator{
+    margin-right: 0;
+}
+.toggle_container{
+    top:1rem
+}
+}
