@@ -21,7 +21,7 @@
 
 @font-face {
     font-family: 'Poppins';
-    src: url(../fonts/Poppins-ExtraBold.ttf) format('truetype');
+src: url(../fonts/Poppins-ExtraBold.ttf) format('truetype');
     font-weight: 800;
     font-style: normal;
 }
@@ -75,7 +75,8 @@ body {
     background-color: var(--bg-card);
     width: 100%;
     max-width: 44rem;
-    padding: 1.7rem;
+    padding: 3rem 3rem 0.5rem 3rem;
+    margin-top: 2.5rem;
     box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.2);
     border-radius: 1.5rem 1.5rem 6.4rem 1.5rem;
     position: relative;
@@ -85,7 +86,7 @@ body {
     position: absolute;
     top: 2rem;
     right: 50%;
-    transform: translate(50%, -50%);
+    transform: translate(50%,-50%);
 
 }
 
@@ -122,30 +123,25 @@ body {
     width: 1.6rem;
     height: 1.6rem;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+transition: transform 0.3s ease, background-color 0.3s ease;
 }
-
-.light-theme .toggle_container {
+.light-theme .toggle_container{
     background-color: var(--bg-color);
 
 }
-
-.light-theme .toggle_ball {
-    transform: translate(3.5rem, -50%);
-    background-color: rgba(255, 255, 255, 0.2);
+.light-theme .toggle_ball{
+  transform: translate(3.5rem, -50%); 
+    background-color: rgba(255, 255, 255, 0.2) ;
 }
-
-.light-theme .sun_color {
-    fill: rgb(255, 255, 23);
+.light-theme .sun_color{
+     fill: rgb(255, 255, 23);
 }
-
-.light-theme .moon_color {
+.light-theme .moon_color{
     fill: rgba(0, 0, 0, 0.5);
 }
-
 .age-calculator__inputs-container {
     display: flex;
     align-items: flex-start;
@@ -175,11 +171,9 @@ body {
     box-shadow: 0 0 10px 2px hsl(334, 30%, 27%);
 
 }
-
-.light-theme .age-calculator__form-group input:focus {
-    box-shadow: 0 0 10px 2px var(--main-color)
+.light-theme .age-calculator__form-group input:focus{
+      box-shadow: 0 0 10px 2px var(--main-color)
 }
-
 .age-calculator__form-group input::placeholder {
     text-align: center;
     color: hsl(228, 12%, 48%);
@@ -193,12 +187,10 @@ body {
     margin-bottom: 0.5rem;
     text-align: center;
 }
-
-.form_btn {
+.form_btn{
     display: flex;
     align-items: center;
 }
-
 .age-calculator__btn {
     display: block;
     border-radius: 50%;
@@ -208,8 +200,7 @@ body {
     mix-blend-mode: multiply;
     position: relative;
 }
-
-.seperator {
+.seperator{
     flex-grow: 1;
     height: 0.1rem;
     margin-right: 1rem;
@@ -242,54 +233,46 @@ body {
     font-weight: 800;
     font-style: italic;
 }
+@media(width<=640px){
+.main_page__content{
+   max-width: 95%;
+   padding-inline: 1.5rem;
+   padding-block: 0.2rem
+}
+.age-calculator__inputs-container{
+    flex: 1;
+     gap: 1rem;
+     margin-top: 1rem;
+}
+.age-calculator__form-group{
+    flex: 1;
+}
+.age-calculator__form-group input{
+    width: 100%;
+   max-width:100%;
+   padding-block: 1.2rem;
+   padding-inline: 1.5rem;
 
-@media(width<=640px) {
-    .main_page__content {
-        max-width: 95%;
-        padding-inline: 1.5rem;
-        padding-block: 0.2rem
-    }
+}
+.form_btn{
+    position:relative; 
+    margin-top:1rem;
+}
 
-    .age-calculator__inputs-container {
-        flex: 1;
-        gap: 1rem;
-        margin-top: 1rem;
-    }
-
-    .age-calculator__form-group {
-        flex: 1;
-    }
-
-    .age-calculator__form-group input {
-        width: 100%;
-        max-width: 100%;
-        padding-block: 1.2rem;
-        padding-inline: 1.5rem;
-
-    }
-
-    .form_btn {
-        position: relative;
-        margin-top: 1rem;
-    }
-
-    .age-calculator__btn {
-        position: absolute;
-        right: 50%;
-        top: 50%;
-        z-index: 100;
-        transform: translate(50%, -50%);
-    }
-
-    .age-calculator__results {
-        margin-top: 4rem
-    }
-
-    .seperator {
-        margin-right: 0;
-    }
-
-    .toggle_container {
-        top: 1rem
-    }
+.age-calculator__btn{
+    position:absolute;
+    right:50%;
+    top:50%;
+    z-index: 100;
+    transform: translate(50%, -50%);
+}
+.age-calculator__results{
+    margin-top:4rem
+}
+.seperator{
+    margin-right: 0;
+}
+.toggle_container{
+    top:1.8rem
+}
 }
