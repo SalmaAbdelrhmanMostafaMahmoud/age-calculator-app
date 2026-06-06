@@ -75,7 +75,7 @@ body {
    width: 0.01rem;
    padding: 0;
    border: 0;
-   margin: -1px;
+   margin: -0.01rem;
    overflow: hidden;
    clip:rect(0,0,0,0);
    white-space: nowrap;
@@ -265,7 +265,6 @@ body {
 
 .age-calculator__form-group.invalid input {
     border-color: var(--color-error);
-    color: var(--color-error);
 
 }
 
@@ -351,8 +350,8 @@ body {
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms ;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto ;
   }
 }

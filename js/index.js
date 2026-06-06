@@ -75,9 +75,9 @@ day_input.parentElement.classList.add('invalid');
       month += 12;
       year -= 1
    };
-   let calculatedDay = day - birthDay;
-   let calculatedMonth = month - birthMonth;
-   let calculated_Year = year - birthYear;
+   const calculatedDay = day - birthDay;
+   const calculatedMonth = month - birthMonth;
+   const calculated_Year = year - birthYear;
    year_output.textContent = calculated_Year;
    month_output.textContent = calculatedMonth;
    day_output.textContent = calculatedDay;
