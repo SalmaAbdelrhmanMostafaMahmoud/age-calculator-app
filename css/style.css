@@ -69,7 +69,17 @@ body {
     min-height: 100dvh;
     position: relative;
 }
-
+.sr-only{
+   position: absolute; 
+   height: 1px;
+   width: 1px;
+   padding: 0;
+   border: 0;
+   margin: -1px;
+   overflow: hidden;
+   clip:rect(0,0,0,0);
+   white-space: nowrap;
+}
 .main_page__content {
     background-color: var(--bg-card);
     width: 100%;
