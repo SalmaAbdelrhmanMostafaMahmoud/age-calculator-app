@@ -8,6 +8,7 @@ const btn_form = document.querySelector('.age-calculator__btn');
 const theme_toggle = document.getElementById('theme_toggle');
 btn_form.addEventListener('click', (e) => {
    e.preventDefault();
+      const currentYear=new Date().getFullYear();
    let valid = true;
    if (day_input.value.trim() === "") {
       day_input.parentElement.classList.add('invalid');
@@ -39,7 +40,7 @@ btn_form.addEventListener('click', (e) => {
       year_input.parentElement.classList.add('invalid');
       year_input.parentElement.querySelector('.age-calculator__error-message').innerText = `This field is required`;
       valid = false
-   } else if (parseInt(year_input.value) < 1000 || parseInt(year_input.value) > 2026) {
+   } else if (parseInt(year_input.value) < 1000 || parseInt(year_input.value) > currentYear) {
       year_input.parentElement.classList.add('invalid');
       year_input.parentElement.querySelector('.age-calculator__error-message').innerText = `Must be a valid year`;
       valid = false
@@ -48,18 +49,26 @@ btn_form.addEventListener('click', (e) => {
       year_input.parentElement.classList.remove('invalid');
       year_input.parentElement.querySelector('.age-calculator__error-message').innerText = ``
    }
-   if (!valid) {
-      return ""
-   }
    let birthDay = parseInt(day_input.value);
    let birthMonth = parseInt(month_input.value);
    let birthYear = parseInt(year_input.value);
+   const testDate= new Date(birthYear, birthMonth - 1, birthDay);
+   let accurateDay= testDate.getDate();
+   if(birthDay!=accurateDay){
+day_input.parentElement.classList.add('invalid');
+   day_input.parentElement.querySelector('.age-calculator__error-message').innerText = `Must be a valid date`;
+   valid = false;
+   }
+     if (!valid) {
+      return ""
+   }
    const today = new Date();
+   const lastDayOfPreviousMonth=new Date(birthYear,birthMonth-1,0).getDate();
    let day = today.getDate();
    let month = today.getMonth() + 1;
    let year = today.getFullYear();
    if (day < birthDay) {
-      day += 30;
+      day +=lastDayOfPreviousMonth;
       month -= 1
    };
    if (month < birthMonth) {

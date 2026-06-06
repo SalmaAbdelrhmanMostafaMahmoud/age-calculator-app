@@ -203,7 +203,7 @@ body {
     display: block;
     border-radius: 50%;
     padding: 0.6rem;
-    background-color: black;
+    background-color: var(--main-color);
     margin-top: 1.5rem;
     mix-blend-mode: multiply;
     position: relative;
@@ -218,7 +218,7 @@ body {
 }
 
 .age-calculator__btn:hover {
-    background-color: var(--bg-btn);
+    background-color: rgb(0, 0, 0);
 }
 
 .age-calculator__result-item {
@@ -267,7 +267,18 @@ body {
 .dark-theme .age-calculator__form-group.invalid input:focus {
     box-shadow: none
 }
+@media(width>=1536px){
+   .toggle_container {
+        top: 15%;
 
+    }   
+}
+@media(width<= 992px){
+    .toggle_container {
+        top: 19%;
+
+    }
+}
 @media(width<=640px) {
     .main_page__content {
         max-width: 90%;
@@ -314,7 +325,7 @@ body {
     }
 
     .toggle_container {
-        top: 10%;
+        top: 18%;
 
     }
 
