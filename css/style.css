@@ -71,8 +71,8 @@ body {
 }
 .sr-only{
    position: absolute; 
-   height: 1px;
-   width: 1px;
+   height: 0.01rem;
+   width: 0.01rem;
    padding: 0;
    border: 0;
    margin: -1px;
@@ -350,7 +350,7 @@ body {
 }
 @media (prefers-reduced-motion: reduce) {
   * {
-    animation-duration: 0.01ms !important;
+    animation-duration: 0.01ms ;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
