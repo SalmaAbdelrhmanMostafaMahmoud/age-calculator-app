@@ -49,12 +49,12 @@ btn_form.addEventListener('click', (e) => {
       year_input.parentElement.classList.remove('invalid');
       year_input.parentElement.querySelector('.age-calculator__error-message').innerText = ``
    }
-   let birthDay = parseInt(day_input.value);
-   let birthMonth = parseInt(month_input.value);
-   let birthYear = parseInt(year_input.value);
+   const birthDay = parseInt(day_input.value);
+   const birthMonth = parseInt(month_input.value);
+   const birthYear = parseInt(year_input.value);
    const testDate= new Date(birthYear, birthMonth - 1, birthDay);
    let accurateDay= testDate.getDate();
-   if(birthDay!=accurateDay){
+   if(birthDay!==accurateDay){
 day_input.parentElement.classList.add('invalid');
    day_input.parentElement.querySelector('.age-calculator__error-message').innerText = `Must be a valid date`;
    valid = false;
