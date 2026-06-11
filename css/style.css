@@ -201,6 +201,7 @@ body {
     font-weight: 800;
     margin-bottom: 0.5rem;
     text-align: center;
+    color: rgb(156, 152, 152);
 }
 
 .form_btn {
@@ -274,13 +275,6 @@ body {
 
 .dark-theme .age-calculator__form-group.invalid input:focus {
     box-shadow: none
-}
-
-@media(width<= 992px){
-    .toggle_container {
-        top: 19%;
-
-    }
 }
 @media(width<=640px) {
     .main_page__content {
