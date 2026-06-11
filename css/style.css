@@ -275,12 +275,7 @@ body {
 .dark-theme .age-calculator__form-group.invalid input:focus {
     box-shadow: none
 }
-@media(width>=1536px){
-   .toggle_container {
-        top: 15%;
 
-    }   
-}
 @media(width<= 992px){
     .toggle_container {
         top: 19%;
